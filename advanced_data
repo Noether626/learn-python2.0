@@ -1,0 +1,23 @@
+"""
+Advanced Data Structures - collections
+@see: https://docs.python.org/3/library/collections.html
+"""
+
+from collections import Counter, defaultdict, deque
+
+def test_counter():
+    c = Counter("banana")
+    assert c["a"] == 3
+    assert c.most_common(1) == [("a", 3)]
+
+def test_defaultdict():
+    d = defaultdict(list)
+    d["a"].append(1)
+    assert d["a"] == [1]
+    assert d["b"] == []
+
+def test_deque():
+    dq = deque([1, 2, 3])
+    dq.appendleft(0)
+    dq.pop()
+    assert list(dq) == [0, 1, 2]
