@@ -1,0 +1,22 @@
+"""
+Modern Python: Dataclasses
+@see: https://docs.python.org/3/library/dataclasses.html
+"""
+
+from dataclasses import dataclass, field
+from typing import List
+
+@dataclass
+class Student:
+    name: str
+    scores: List[int] = field(default_factory=list)
+    passed: bool = False
+
+    def average(self) -> float:
+        return sum(self.scores) / len(self.scores) if self.scores else 0.0
+
+def test_dataclass_behavior():
+    s = Student("Alice", [90, 85, 88])
+    assert s.name == "Alice"
+    assert abs(s.average() - 87.67) < 0.01
+    assert Student("Bob").scores == []
