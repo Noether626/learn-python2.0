@@ -1,0 +1,41 @@
+"""
+Optional Visualization Helpers
+"""
+
+try:
+    from rich.table import Table
+    from rich.console import Console
+
+    def demo_list_operations():
+        console = Console()
+        lst = [1, 2, 3]
+        table = Table(title="List Operations")
+        table.add_column("Step")
+        table.add_column("Value")
+
+        table.add_row("Init", str(lst))
+        lst.append(4)
+        table.add_row("Append", str(lst))
+        lst.pop()
+        table.add_row("Pop", str(lst))
+
+        console.print(table)
+
+except ImportError:
+    pass
+
+#!/usr/bin/env python3
+import importlib
+
+MODULES = [
+    "demos.visual_helpers",
+]
+
+def main():
+    for m in MODULES:
+        mod = importlib.import_module(m)
+        if hasattr(mod, "demo_list_operations"):
+            mod.demo_list_operations()
+
+if __name__ == "__main__":
+    main()
