@@ -1,0 +1,153 @@
+"""
+Exercise: Variables
+Reference: src/getting_started/test_variables.py
+"""
+ 
+def swap_values(a, b):
+   """
+   Return (b, a)
+   """
+   # TODO
+   raise NotImplementedError
+from exercises.getting_started.ex_variables import swap_values
+ 
+def test_swap_values():
+   assert swap_values(1, 2) == (2, 1)
+ 
+"""
+Exercise: Arithmetic Operators
+"""
+ 
+def compute_expression(x: int) -> int:
+   """
+   Return x^2 + 3*x - 5
+   """
+   # TODO
+   raise NotImplementedError
+from exercises.operators.ex_arithmetic import compute_expression
+ 
+def test_compute_expression():
+   assert compute_expression(2) == 5
+ 
+"""
+Exercise: Lists
+"""
+ 
+def second_largest(nums: list[int]) -> int:
+   # TODO
+   raise NotImplementedError
+from exercises.data_types.ex_lists import second_largest
+ 
+def test_second_largest():
+assert second_largest([1, 3, 2, 5, 4]) == 4
+"""
+Exercise: Strings
+"""
+ 
+def reverse_string(s: str) -> str:
+   # TODO
+   raise NotImplementedError
+from exercises.data_types.ex_strings import reverse_string
+ 
+def test_reverse_string():
+   assert reverse_string("hello") == "olleh"
+ 
+"""
+Exercise: If Statements
+"""
+ 
+def classify_number(n: int) -> str:
+   """
+   Return "positive", "negative" or "zero"
+   """
+   # TODO
+   raise NotImplementedError
+from exercises.control_flow.ex_if import classify_number
+ 
+def test_classify_number():
+   assert classify_number(10) == "positive"
+   assert classify_number(-5) == "negative"
+   assert classify_number(0) == "zero"
+"""
+Exercise: For Loops
+"""
+ 
+def sum_of_evens(n: int) -> int:
+   # TODO: sum even numbers from 0 to n (inclusive)
+   raise NotImplementedError
+from exercises.control_flow.ex_for import sum_of_evens
+ 
+def test_sum_of_evens():
+   assert sum_of_evens(6) == 12
+ 
+"""
+Exercise: Functions
+"""
+ 
+def is_even(n: int) -> bool:
+   # TODO
+   raise NotImplementedError
+from exercises.functions.ex_functions import is_even
+ 
+def test_is_even():
+   assert is_even(4)
+   assert not is_even(5)
+ 
+"""
+Exercise: Classes
+"""
+ 
+class Rectangle:
+   # TODO: implement __init__ and area()
+   def __init__(self, width, height):
+       raise NotImplementedError
+ 
+   def area(self):
+       raise NotImplementedError
+from exercises.classes.ex_classes import Rectangle
+ 
+def test_rectangle_area():
+   r = Rectangle(3, 4)
+   assert r.area() == 12
+ 
+"""
+Exercise: Exceptions
+"""
+ 
+def safe_divide(a: int, b: int) -> float:
+   # TODO: handle ZeroDivisionError
+   raise NotImplementedError
+from exercises.exceptions.ex_exceptions import safe_divide
+ 
+def test_safe_divide():
+   assert safe_divide(10, 2) == 5.0
+   assert safe_divide(10, 0) == 0.0
+ 
+"""
+Exercise: File I/O
+"""
+ 
+def count_lines(path: str) -> int:
+   # TODO
+   raise NotImplementedError
+from exercises.files.ex_file_io import count_lines
+ 
+def test_count_lines(tmp_path):
+   f = tmp_path / "a.txt"
+   f.write_text("line1\nline2\n")
+   assert count_lines(str(f)) == 2
+ 
+"""
+Exercise: Standard Libraries
+"""
+ 
+import math
+ 
+def circle_area(radius: float) -> float:
+   # TODO
+   raise NotImplementedError
+from exercises.additions.ex_standard_libraries import circle_area
+ 
+def test_circle_area():
+   assert abs(circle_area(1) - 3.14159) < 0.0001
+ 
